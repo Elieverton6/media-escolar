@@ -6,59 +6,62 @@ function media() {
     let res = document.getElementById("res");
     let txtmateria = document.getElementById("txtmateria")
     
-    if(txtmateria.value.length <= 3) {
-        res.innerHTML = "[ ERRO! ] O nome da materia não pode ficar vazio!"
-    } else if(txtm1.value.length == 0) {
-        res.innerHTML = "[ ERRO! ] A media do 1º Bimestre não pode ficar vázia!"
+    if(txtm1.value.length == 0) {
+        res.innerHTML = "<p><img width='25px' src='icons/error.png'/> A media do 1º bimestre não pode ficar vázia!</p>";
     } else if(txtm2.value.length == 0) {
-        res.innerHTML = "[ ERRO! ] A media do 2º Bimestre não pode ficar vázia!"
+        res.innerHTML = "<p><img width='25px' src='icons/error.png'/> A media do 2º bimestre não pode ficar vázia!</p>";
     } else if(txtm3.value.length == 0) {
-        res.innerHTML = "[ ERRO! ] A media do 3º Bimestre não pode ficar vázia!"
+        res.innerHTML = "<p><img width='25px' src='icons/error.png'/> A media do 3º bimestre não pode ficar vázia!</p>";
     } else if(txtm4.value.length == 0) {
-        res.innerHTML = "[ ERRO! ] A media do 4º Bimestre não pode ficar vázia!"
+        res.innerHTML = "<p><img width='25px' src='icons/error.png'/> A media do 4º bimestre não pode ficar vázia!</p>";
     } else {
         let n1 = Number(txtm1.value);
         let n2 = Number(txtm2.value);
         let n3 = Number(txtm3.value);
         let n4 = Number(txtm4.value);
-        let materia = txtmateria.value;
-        let result = [n1 + n2 + n3 + n4] / 4;
+        let result = (n1 + n2 + n3 + n4) / 4;
 
-        if(result > 10) {
-            res.innerHTML = ("[ERRO!] A média do bimestre não pode ser maior que 10.");
+        if(txtm1.value > 10) {
+            res.innerHTML = "<p><img width='25px' src='icons/error.png'/>A média do 1º bimestre não pode ser maior que 10.</p>";
+        } else if(txtm2.value > 10) {
+            res.innerHTML = "<p><img width='25px' src='icons/error.png'/>A média do 2º bimestre não pode ser maior que 10.</p>";
+        } else if(txtm3.value > 10) {
+            res.innerHTML = "<p><img width='25px' src='icons/error.png'/>A média do 3º bimestre não pode ser maior que 10.</p>";
+        } else if(txtm4.value > 10) {
+            res.innerHTML = "<p><img width='25px' src='icons/error.png'/>A média do 4º bimestre não pode ser maior que 10.</p>";
         } else {
             if(result < 6) {
                 console.log(result)
-                res.innerHTML = (`[REPROVADO] Sua media em ${materia} foi: ${result}`);
+                res.innerHTML = (`Deu ruim! Sua média foi: ${result}`);
             } else if(result == 6 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 6,0`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 6,0.</p>`)
             } else if(result >= 6.1 && result <= 6.5 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 6,5`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 6,5.</p>`)
             } else if(result >= 6.6 && result <= 7 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 7,0`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 7,0.</p>`)
             } else if(result >= 7.1 && result <= 7.5 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 7,5`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 7,5.</p>`)
             } else if(result >= 7.6 && result <= 8 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 8,0`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 8,0.</p>`)
             } else if(result >= 8.1 && result <= 8.5 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 8,5`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 8,5.</p>`)
             } else if(result >= 8.6 && result <= 9 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 9,0`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 9,0.</p>`)
             } else if(result >= 9.1 && result <= 9.5 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 9,5`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 9,5.</p>`)
             } else if(result >= 9.6 && result <= 10 ) {
                 console.log(result)
-                res.innerHTML = (`Parabéns! Você foi aprovado na materia de ${materia} com a média: 10,0`)
+                res.innerHTML = (`<p><img width='25px' src='icons/real.png'/>Parabéns! Você foi aprovado com a média: 10,0.</p>`)
             } else {
-                res.innerHTML = ("[ ERRO!] Caso tenha acontecido erro me informe o que houve pelo Whatsapp")
+                res.innerHTML = ("Caso tenha acontecido erro me informe o que houve pelo Whatsapp")
             }
         }        
     }
